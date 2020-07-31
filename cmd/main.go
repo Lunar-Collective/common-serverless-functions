@@ -2,15 +2,12 @@ package main
 
 import (
 	"context"
-	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/99designs/gqlgen/handler"
 	"github.com/Lunar-Collective/go-graphql-lambda/graph"
 	"github.com/Lunar-Collective/go-graphql-lambda/graph/generated"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/awslabs/aws-lambda-go-api-proxy/gorillamux"
 	"github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc"
-	"github.com/gorilla/mux"
 	"log"
 )
 
