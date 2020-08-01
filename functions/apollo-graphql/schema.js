@@ -7,6 +7,9 @@ module.exports = gql`
     author(id: Int!): Author
     authorByName(name: String!): Author
   }
+  type Mutation {
+    addBook(title: String, author: String): Boolean
+  }
   type Author {
     id: ID!
     name: String!

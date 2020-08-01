@@ -1,12 +1,12 @@
 const auth0verify = require('auth0-jwt-lambda');
 
 module.exports = (integrationContext) => {
-    const token = integrationContext.event.headers.authorization || '';
+    const token = (integrationContext.event.headers.authorization || '').replace("Bearer ", "");
 
     const run = async () => {
         try {
             return await auth0verify.verify(
-                token.replace("Bearer ", ""),
+                token,
                 process.env.AUTH_DOMAIN);
         } catch(err) {
             console.log(err);
@@ -17,6 +17,6 @@ module.exports = (integrationContext) => {
 
     return {
         token,
-        decoded: run()
+        decoded: token && token !== '' ? run() : {}
     };
 }
