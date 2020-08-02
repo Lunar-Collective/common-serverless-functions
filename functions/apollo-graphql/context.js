@@ -15,6 +15,7 @@ module.exports = (integrationContext) => {
         }
     };
 
+
     return {
         token,
         decoded: token && token !== '' ? run() : {}
