@@ -9,6 +9,7 @@ module.exports = gql`
   }
   type Mutation {
     addBook(title: String, author: String): Boolean
+    onPaymentIntentReceived(amountInCents: Int!): String
   }
   type Author {
     id: ID!
